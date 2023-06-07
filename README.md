@@ -2,4 +2,13 @@
 
 ## Authors
 Martin Farr
+
 Henry Vang
+
+
+Ben Currier
+
+Bryan Stauning
+
+
+
