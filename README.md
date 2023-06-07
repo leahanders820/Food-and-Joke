@@ -2,3 +2,5 @@
 
 ## Authors
 Martin Farr
+Bryan Stauning
+
