@@ -2,3 +2,4 @@
 
 ## Authors
 Martin Farr
+Ben Currier
