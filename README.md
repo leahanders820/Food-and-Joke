@@ -2,4 +2,9 @@
 
 ## Authors
 Martin Farr
+
 Ben Currier
+
+Bryan Stauning
+
+
