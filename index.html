@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fetch Options</title>
+    <title>We Got Jokes Too</title>
     <link rel="stylesheet" type="text/css" href="./assets/style.css" />
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -19,9 +19,43 @@
       <section class="card card-rounded col-7 bg-white">
         <header class="card-header text-center">
           <h2 class="text-white">
-            Dad Jokes API Check
+            *Would you like to see prior recipes?* 
+            <!-- In the above, i'd like to see 'buttons' for Yes or No.. -->
+            <!-- ...Where if Yes is selected, user's prior recipe data is displayed... -->
+            <!-- ...as a concatonated list with a date and title of the dish only -->
+            <!-- We should think about how to implement the local storage aspect -->
+            <!-- This might not be the best spot, but let's consider this a placeholder -->
           </h2>
         </header>
+        <div id="search-modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>What are you Hangry for?!</h2>
+            <form id="search-form">
+              <div class="form-group">
+                <label>Type(s) of meat, if not vegan:</label>
+                <input type="text" id="meat-input" placeholder="Enter meat type">
+              </div>
+              <div class="form-group">
+                <label>Type(s) of veggies, if you're into that:</label>
+                <input type="text" id="veggies-input" placeholder="Enter veggies type">
+              </div>
+              <div class="form-group">
+                <label>Type(s) of drink, if you want to dive into making any:</label>
+                <input type="text" id="drink-input" placeholder="Enter drink type">
+              </div>
+              <div class="form-group">
+                <label>How many people are you serving?</label>
+                <input type="number" id="people-input" placeholder="Enter number of people">
+              </div>
+              <div class="form-group">
+                <label>Is there a budget restriction?</label>
+                <input type="text" id="budget-input" placeholder="Enter budget restriction">
+              </div>
+              <button type="submit">Search</button>
+            </form>
+          </div>
+        </div>
         <div class="p-3">
           <p class="card-body">
             Find a recipe
