@@ -1,17 +1,40 @@
-console.log('hello')
-var gitrepo = 'https://api.github.com/repos/nodejs/node/issues?per_page=5';
+// Function to fetch jokes
+function fetchJokes(query) {
+  var apiUrl = 'https://v2.jokeapi.dev/joke/Any';
 
-fetch(gitrepo,
-{
- cache: 'reload',
-})
- .then(function (response) {
-  return response.json();
- })
- .then(function (data) {
-  console.log(data[0].comments_url);
+  $.ajax({
+    url: apiUrl,
+    method: 'GET',
+    data: {
+      contains: query
+    },
+    success: function(response) {
+      // Process the response and display the jokes
+      if (response.type === 'single') {
+        // Display single-part joke
+        console.log(response.joke);
+      } else if (response.type === 'twopart') {
+        // Display two-part joke
+        console.log(response.setup);
+        console.log(response.delivery);
+      }
+    },
+    error: function() {
+      // Handle error cases
+      console.log('Error occurred while fetching jokes.');
+    }
+  });
+}
 
-  console.log(data);
- });
+// Function to handle form submission
+function handleFormSubmit(event) {
+  event.preventDefault();
+  
+  var query = $('#search-input').val();
 
- //can do the same thing with insomniea
+  // Fetch recipes and jokes based on the user query
+  fetchJokes(query);
+}
+
+// Attach event listener to form submission
+$('#search-form').on('submit', handleFormSubmit);
