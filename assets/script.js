@@ -38,3 +38,46 @@ function handleFormSubmit(event) {
 
 // Attach event listener to form submission
 $('#search-form').on('submit', handleFormSubmit);
+
+const url = 'https://humor-jokes-and-memes.p.rapidapi.com/jokes/search?exclude-tags=nsfw&keywords=rocket&min-rating=7&include-tags=one_liner&number=3&max-length=200';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '95dd2557d2msh5efa2a3a96ccc0bp1ff4fbjsn4b53cc8c12dd',
+		'X-RapidAPI-Host': 'humor-jokes-and-memes.p.rapidapi.com'
+	}
+};
+function foodSearch(foodInput){
+	var formattedFoodSearch = foodInput.replace(" ","%20")
+	console.log(foodInput)
+	console.log(formattedFoodSearch)
+	const url2 = "https://yummly2.p.rapidapi.com/feeds/auto-complete?q="+foodInput;
+const options2 = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '95dd2557d2msh5efa2a3a96ccc0bp1ff4fbjsn4b53cc8c12dd',
+		'X-RapidAPI-Host': 'yummly2.p.rapidapi.com'
+	}}
+
+fetch(url2, options2)
+	.then(respons => respons.json())
+	.then(data => console.log(data))
+}
+foodSearch("fish tacos with cabbage")
+
+
+
+
+// recipe api
+const url3 = 'https://cors-every-where.herokuapp.com/'+'http://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata';
+
+const options3 = {
+	method: 'GET',
+	headers: {
+		"Access-Control-Allow-Origin": "*",
+	"Access-Control-Allow-Credentials": "true",
+	"Access-Control-Allow-Methods": "GET",
+	}}
+fetch(url3, options3)
+	.then(respons => respons.json())
+	.then(data => console.log(data))
