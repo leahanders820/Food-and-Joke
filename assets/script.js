@@ -29,7 +29,7 @@ fetch(url3, options3)
 })
 // Function to fetch jokes
 function fetchJokes() {
-  var apiUrl = 'https://v2.jokeapi.dev/joke/Any';
+  var apiUrl = 'https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit';
   $.ajax({
     url: apiUrl,
     method: 'GET',
