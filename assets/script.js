@@ -44,7 +44,8 @@ function fetchJokes() {
         console.log(response.joke);
       } else if (response.type === 'twopart') {
         // Display two-part joke
-        populateDoubleJoke(response.setup + response.delivery)
+        populateDoubleSetup(response.setup)
+        populateDoubleDelivery(response.delivery)
         console.log(response.setup);
         console.log(response.delivery);
       }
@@ -68,12 +69,13 @@ function populateSingleJoke(joke) {
   $('#jokecontainer').append(joke)
 }
 
-function populateDoubleJoke(setup){
+function populateDoubleSetup(setup){
  $('#jokecontainer').append(setup)
 //  $('#jokecontainer').append(delivery)
-
 }
-
+function populateDoubleDelivery(delivery){
+ $('#jokecontainer2').append(delivery)
+}
 // Attach event listener to form submission
 $('#search-form').on('click', fetchJokes);
 
