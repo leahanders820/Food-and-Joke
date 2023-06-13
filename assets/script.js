@@ -10,7 +10,23 @@ const options3 = {
 }
 fetch(url3, options3)
   .then(respons => respons.json())
-  .then(data => console.log(data))
+  .then(data => {
+  var meals = data.meals[0]
+  console.log(data.meals)
+  console.log(meals.strMeal)
+  console.log(meals.strMealThumb)
+  console.log(meals.strSource)
+  console.log(meals.strYoutube)
+
+  for (let index = 1; index < 21; index++) {
+    // var ingredients = "strIngredient" + index.toString();
+    var ingredients = `strIngredient${index}`;
+    var measurements = "strMeasure" + index.toString();
+    console.log(meals[ingredients], meals[measurements])
+    }
+  console.log(meals.strInstructions)
+
+})
 // Function to fetch jokes
 function fetchJokes() {
   var apiUrl = 'https://v2.jokeapi.dev/joke/Any';
