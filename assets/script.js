@@ -44,6 +44,7 @@ function fetchJokes() {
         console.log(response.joke);
       } else if (response.type === 'twopart') {
         // Display two-part joke
+        populateDoubleJoke(response.setup + response.delivery)
         console.log(response.setup);
         console.log(response.delivery);
       }
@@ -62,9 +63,17 @@ function handleFormSubmit(event) {
   fetchJokes(query);
   // foodSearch(query);
 }
+
 function populateSingleJoke(joke) {
   $('#jokecontainer').append(joke)
 }
+
+function populateDoubleJoke(setup){
+ $('#jokecontainer').append(setup)
+//  $('#jokecontainer').append(delivery)
+
+}
+
 // Attach event listener to form submission
 $('#search-form').on('click', fetchJokes);
 
