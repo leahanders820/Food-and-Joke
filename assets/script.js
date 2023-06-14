@@ -80,7 +80,7 @@ function populateTwoPartSetup(setup) {
 }
 
 function populateTwoPartDelivery(delivery){
-  $('#jokecontainer2').html(delivery)
+  $('#delivery').html(delivery)
 }
 
 
@@ -89,11 +89,11 @@ function getLastJokeAndRecipe() {
   localStorage.getItem(Last-Joke)
 }
 // Attach event listener to form submission
-$('#search-form').on('click', fetchJokes);
+$('#newJoke').on('click', fetchJokes);
 
 function saveJoke (){
   var joke1 =$('#setup').text()  
-  var joke2 =$('#jokecontainer2').text()
+  var joke2 =$('#delivery').text()
   
   localStorage.setItem("Setup", joke1)
   localStorage.setItem("Delivery", joke2)
