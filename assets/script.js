@@ -41,14 +41,18 @@ function fetchJokes() {
     success: function (response) {
       // Process the response and display the jokes
       if (response.type === 'single') {
+
         populateSingleJoke(response.joke)
         // Display single-part joke
         console.log(response.joke);
+
       } else if (response.type === 'twopart') {
         populateTwoPartSetup(response.setup)
         // Display two-part joke
-        // populateTwoPartDelivery(response.delivery)
+        
         setTimeout(function(){populateTwoPartDelivery(response.delivery)}, 3000)
+        // sets timer for 3 seconds for delivery joke
+        
         console.log(response.setup);
         console.log(response.delivery);
       }
@@ -61,41 +65,47 @@ function fetchJokes() {
 }
 
 function populateSingleJoke(joke) {
-  $('#jokecontainer2').empty()
+  $('#delivery').empty()
+  // clears joke
+
   console.log(joke)
   $('#setup').html(joke)
-  // localStorage.setItem("Last-Joke", joke)
+  // sends single joke to html
+  
 }
 
-// function populateTwoPartSetup(setup){
-//  $('#jokecontainer').append(setup)
-// }
-function populateTwoPartSetup(setup) {
-  // $('#jokecontainer').empty()
 
+function populateTwoPartSetup(setup) {
   console.log(setup)
   $('#setup').html(setup)
-  // $('#jokecontainer2').html(delivery)
-  // localStorage.setItem("Last-Joke", setup)
+  // sends the setup of twopartjoke to the html
 }
 
 function populateTwoPartDelivery(delivery){
   $('#delivery').html(delivery)
+  // sends the delivery of twopartjoke to the html
 }
 
 
 
 function getLastJokeAndRecipe() {
   localStorage.getItem(Last-Joke)
+  // not sure
 }
-// Attach event listener to form submission
-$('#newJoke').on('click', fetchJokes);
+
+
 
 function saveJoke (){
   var joke1 =$('#setup').text()  
+  // creates a variable for setup joke
   var joke2 =$('#delivery').text()
+  // creates a variable for delivery joke
   
   localStorage.setItem("Setup", joke1)
   localStorage.setItem("Delivery", joke2)
+  // stores setup and delivery into localStorage under "Setup" and "Delivery"
 }
 $('#saveJoke').on('click', saveJoke)
+// button that saves joke in localStorage
+$('#newJoke').on('click', fetchJokes);
+// button that generates new joke
