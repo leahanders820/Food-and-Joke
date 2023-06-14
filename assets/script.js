@@ -47,8 +47,8 @@ function fetchJokes() {
       } else if (response.type === 'twopart') {
         populateTwoPartSetup(response.setup)
         // Display two-part joke
-        populateTwoPartDelivery(response.delivery)
-        // setTimeout(populateTwoPartDelivery(response.delivery), 3000)
+        // populateTwoPartDelivery(response.delivery)
+        setTimeout(function(){populateTwoPartDelivery(response.delivery)}, 3000)
         console.log(response.setup);
         console.log(response.delivery);
       }
@@ -64,7 +64,7 @@ function populateSingleJoke(joke) {
   $('#jokecontainer2').empty()
   console.log(joke)
   $('#setup').html(joke)
-  localStorage.setItem("Last-Joke", joke)
+  // localStorage.setItem("Last-Joke", joke)
 }
 
 // function populateTwoPartSetup(setup){
@@ -80,7 +80,7 @@ function populateTwoPartSetup(setup) {
 }
 
 function populateTwoPartDelivery(delivery){
-  setTimeout($('#jokecontainer2').html(delivery), 3000)
+  $('#jokecontainer2').html(delivery)
 }
 
 
@@ -90,3 +90,12 @@ function getLastJokeAndRecipe() {
 }
 // Attach event listener to form submission
 $('#search-form').on('click', fetchJokes);
+
+function saveJoke (){
+  var joke1 =$('#setup').text()  
+  var joke2 =$('#jokecontainer2').text()
+  
+  localStorage.setItem("Setup", joke1)
+  localStorage.setItem("Delivery", joke2)
+}
+$('#saveJoke').on('click', saveJoke)
