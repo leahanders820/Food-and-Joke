@@ -59,13 +59,15 @@ function fetchJokes() {
 }
 
 function populateSingleJoke(joke) {
-  $('#jokecontainer').empty()
+  // $('#jokecontainer').empty()
+  console.log(joke)
   $('#jokecontainer').append(joke)
   localStorage.setItem("Last-Joke", joke)
 }
 
 function populateTwoPartJoke(setup, delivery) {
   $('#jokecontainer').empty()
+  console.log(setup, delivery)
   $('#jokecontainer').append(setup)
   $('#jokecontainer').append(delivery)
   localStorage.setItem("Last-Joke", setup + delivery)
