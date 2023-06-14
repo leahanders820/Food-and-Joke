@@ -45,8 +45,10 @@ function fetchJokes() {
         // Display single-part joke
         console.log(response.joke);
       } else if (response.type === 'twopart') {
-        populateTwoPartJoke(response.setup, response.delivery)
+        populateTwoPartSetup(response.setup)
         // Display two-part joke
+        populateTwoPartDelivery(response.delivery)
+        // setTimeout(populateTwoPartDelivery(response.delivery), 3000)
         console.log(response.setup);
         console.log(response.delivery);
       }
@@ -59,20 +61,28 @@ function fetchJokes() {
 }
 
 function populateSingleJoke(joke) {
-  // $('#jokecontainer').empty()
+  $('#jokecontainer2').empty()
   console.log(joke)
-  $('#jokecontainer').append(joke)
+  $('#setup').html(joke)
   localStorage.setItem("Last-Joke", joke)
 }
 
-function populateTwoPartJoke(setup, delivery) {
-  $('#jokecontainer').empty()
-  console.log(setup, delivery)
-  $('#jokecontainer').append(setup)
-  $('#jokecontainer').append(delivery)
-  localStorage.setItem("Last-Joke", setup + delivery)
-  
+// function populateTwoPartSetup(setup){
+//  $('#jokecontainer').append(setup)
+// }
+function populateTwoPartSetup(setup) {
+  // $('#jokecontainer').empty()
+
+  console.log(setup)
+  $('#setup').html(setup)
+  // $('#jokecontainer2').html(delivery)
+  // localStorage.setItem("Last-Joke", setup)
 }
+
+function populateTwoPartDelivery(delivery){
+  setTimeout($('#jokecontainer2').html(delivery), 3000)
+}
+
 
 
 function getLastJokeAndRecipe() {
