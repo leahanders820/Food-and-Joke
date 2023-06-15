@@ -1,3 +1,23 @@
+var recipeContents = document.getElementById('recipeContents')
+var jokeContents = document.getElementById('jokeContents')
+
+function renderJokeAndRecipe(){
+  console.log('btnclicked') 
+  var Setup = (localStorage.getItem("Setup"))
+  var Delivery = (localStorage.getItem("Delivery"))
+
+  if (element.length > 2){
+    jokeContents.innerHTML = Setup + "<br>" + Delivery
+  }
+  $('#ingrediants').html(localStorage.getItem('ingrediantsMeasurements'))
+  $('#name').html(localStorage.getItem('recipeName'))
+  $('#instructions').html(localStorage.getItem('recipeInstructions'))
+}
+
+
+
+
+
 // Recipe Fetch (API Call)
 function populateRecipe() {
   
