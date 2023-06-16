@@ -1,17 +1,17 @@
-var recipeContents = document.getElementById('recipeContents')
-var jokeContents = document.getElementById('jokeContents')
+var recipeContents = document.getElementById("recipeContents")
+var jokeContents = document.getElementById("jokeContents")
 
 function renderJokeAndRecipe(){
-  console.log('btnclicked') 
+  console.log("btnclicked")
   var Setup = (localStorage.getItem("Setup"))
   var Delivery = (localStorage.getItem("Delivery"))
 
-  if (element.length > 2){
+  if (Setup !== null){
     jokeContents.innerHTML = Setup + "<br>" + Delivery
   }
-  $('#ingrediants').html(localStorage.getItem('ingrediantsMeasurements'))
-  $('#name').html(localStorage.getItem('recipeName'))
-  $('#instructions').html(localStorage.getItem('recipeInstructions'))
+   $('#ingredients').html(localStorage.getItem("ingredientsMeasurements"))
+   $('#name').text(localStorage.getItem('recipeName'))
+   $('#instructions').text(localStorage.getItem('recipeInstructions'))
 }
 
 
@@ -20,8 +20,6 @@ function renderJokeAndRecipe(){
 
 // Recipe Fetch (API Call)
 function populateRecipe() {
-  
-
 const url3 = 'https://cors-every-where.herokuapp.com/' + 'http://www.themealdb.com/api/json/v1/1/random.php';
 const options3 = {
   method: 'GET',
@@ -46,7 +44,6 @@ fetch(url3, options3)
   
 
   // For Loop to parse into strings, items from JSON Object from Recipe API
-
   for (let index = 1; index < 21; index++) {
     var ingredients = `strIngredient${index}`;
     var measurements = "strMeasure" + index.toString();
@@ -61,15 +58,33 @@ function populateRecipeCard(meals,ingredientsArray){
   $('#recipeName').html(meals.strMeal)
   $('#ingredientsMeasurements').html(meals)
   $('#recipeInstructions').html(meals.strInstructions)
+  console.log(ingredientsArray)
   for (let index = 0; index < ingredientsArray.length; index++) {
     const element = ingredientsArray[index];
     // element is the 'word' we want to put into a li tag in the html
     // target an ol in the html; create a li; set text content to element
     // append li onto the ol.
+    if (element.length > 2 ){
+    document.querySelector("#ingredientsMeasurements").innerHTML += element + "<br>"
+    }
     console.log(element)
   }
-  // sends the delivery of twopartjoke to the html
 }
+
+function saveRecipe(){
+  var ingredientsMeasurements = $('#ingredientsMeasurements').html()
+  var recipeName = $('#recipeName').text()
+  var recipeInstructions = $('#recipeInstructions').text()
+  console.log({ingredientsMeasurements, recipeName, recipeInstructions})
+  localStorage.setItem('ingredientsMeasurements', ingredientsMeasurements)
+  localStorage.setItem('recipeName', recipeName)
+  localStorage.setItem('recipeInstructions', recipeInstructions)  
+}
+
+
+
+
+
 
 // Function to fetch 'clean' jokes
 function fetchJokes() {
@@ -145,3 +160,5 @@ $('#newJoke').on('click', fetchJokes);
 // Attach event listener to form submission
 $('#search-form').on('click', fetchJokes);
 $('#search-form').on('click', populateRecipe);
+$('#btnbottom').on('click', renderJokeAndRecipe);
+$('#savedRecipe').on('click', saveRecipe);
