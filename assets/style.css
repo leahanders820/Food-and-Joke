@@ -15,3 +15,7 @@
    border-radius: 90px;
    background: linear-gradient(135deg, #f1f0ec, #b18449);
 }
+
+.hidden {
+   display: none
+}

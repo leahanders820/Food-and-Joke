@@ -14,10 +14,6 @@ function renderJokeAndRecipe(){
    $('#instructions').text(localStorage.getItem('recipeInstructions'))
 }
 
-
-
-
-
 // Recipe Fetch (API Call)
 function populateRecipe() {
 const url3 = 'https://cors-every-where.herokuapp.com/' + 'http://www.themealdb.com/api/json/v1/1/random.php';
@@ -29,6 +25,7 @@ const options3 = {
     "Access-Control-Allow-Methods": "GET",
   }
 }
+
 // Fetch to get items contained in the Json Object from Recipe API
 // Items are logged out to console
 fetch(url3, options3)
@@ -42,7 +39,6 @@ fetch(url3, options3)
   console.log(meals.strSource)
   console.log(meals.strYoutube)
   
-
   // For Loop to parse into strings, items from JSON Object from Recipe API
   for (let index = 1; index < 21; index++) {
     var ingredients = `strIngredient${index}`;
@@ -80,11 +76,6 @@ function saveRecipe(){
   localStorage.setItem('recipeName', recipeName)
   localStorage.setItem('recipeInstructions', recipeInstructions)  
 }
-
-
-
-
-
 
 // Function to fetch 'clean' jokes
 function fetchJokes() {
@@ -136,11 +127,6 @@ function populateTwoPartDelivery(delivery){
   $('#delivery').html(delivery)
   // sends the delivery of twopartjoke to the html
 }
-
-// function getLastJokeAndRecipe() {
-//   localStorage.getItem(Last-Joke)
-//   // not sure
-// }
 
 function saveJoke (){
   var joke1 =$('#setup').text()  
