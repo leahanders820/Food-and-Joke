@@ -51,9 +51,12 @@ fetch(url3, options3)
   console.log(meals.strInstructions)
   populateRecipeCard(meals,ingredientsArray)
 })
+// function to populate ids on respective cards on UI from api
 }
 function populateRecipeCard(meals,ingredientsArray){
   $('#recipeName').html(meals.strMeal)
+  $('#recipeUrl').html(meals.strSource)
+  $('#recipeVideo').html(meals.strYoutube)
   $('#ingredientsMeasurements').html(meals)
   $('#recipeInstructions').html(meals.strInstructions)
   $('#recipeTitle').removeClass("hidden")
@@ -153,4 +156,5 @@ $('#newJoke').on('click', fetchJokes);
 $('#search-form').on('click', fetchJokes);
 $('#search-form').on('click', populateRecipe);
 $('#btnbottom').on('click', renderJokeAndRecipe);
+// $('#btnbottom').on('click',"");
 $('#savedRecipe').on('click', saveRecipe);
