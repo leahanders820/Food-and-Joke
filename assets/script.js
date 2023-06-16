@@ -12,6 +12,8 @@ function renderJokeAndRecipe(){
    $('#ingredients').html(localStorage.getItem("ingredientsMeasurements"))
    $('#name').text(localStorage.getItem('recipeName'))
    $('#instructions').text(localStorage.getItem('recipeInstructions'))
+   $('#savedRecipe2').removeClass("hidden")
+   $('#savedJoke').removeClass("hidden")
 }
 
 // Recipe Fetch (API Call)
@@ -54,6 +56,10 @@ function populateRecipeCard(meals,ingredientsArray){
   $('#recipeName').html(meals.strMeal)
   $('#ingredientsMeasurements').html(meals)
   $('#recipeInstructions').html(meals.strInstructions)
+  $('#recipeTitle').removeClass("hidden")
+  $('#ingredientsTitle').removeClass("hidden")
+  $('#instructionsTitle').removeClass("hidden")
+  $('#hideMe').removeClass("hidden")
   console.log(ingredientsArray)
   for (let index = 0; index < ingredientsArray.length; index++) {
     const element = ingredientsArray[index];
