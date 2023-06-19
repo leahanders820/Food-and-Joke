@@ -52,6 +52,7 @@ fetch(url3, options3)
   populateRecipeCard(meals,ingredientsArray)
 })
 }
+// function to populate data within the recipe card on click of go or when function is run.
 function populateRecipeCard(meals,ingredientsArray){
   $('#recipeName').html(meals.strMeal)
   $('#ingredientsMeasurements').html(meals)
@@ -60,6 +61,8 @@ function populateRecipeCard(meals,ingredientsArray){
   $('#ingredientsTitle').removeClass("hidden")
   $('#instructionsTitle').removeClass("hidden")
   $('#hideMe').removeClass("hidden")
+  // why isn't the below working to hide button on click?
+  $('#search-form').addClass("hidden")
   console.log(ingredientsArray)
   for (let index = 0; index < ingredientsArray.length; index++) {
     const element = ingredientsArray[index];
@@ -72,6 +75,8 @@ function populateRecipeCard(meals,ingredientsArray){
     console.log(element)
   }
 }
+// Get a new recipe by calling function to get the recipe info
+$('#newRecipe').on('click', populateRecipe);
 
 function saveRecipe(){
   var ingredientsMeasurements = $('#ingredientsMeasurements').html()
