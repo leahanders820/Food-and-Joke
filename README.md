@@ -21,7 +21,7 @@ Hope you like this site!
 ...
 ## Link to Food-and-Joke
 
-![Webpage](https://leahanders820.github.io/Food-and-Joke/)
+[Deployed Page](https://leahanders820.github.io/Food-and-Joke/)
 
 ...
 ## Some Illustrations
