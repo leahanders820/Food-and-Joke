@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>We Got Jokes Too</title>
-  <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="stylesheet" href="./Assets/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -22,21 +22,26 @@
           your mood 😎
         </h2>
 
-        <div id="jokecontainer" class="mt-3 has-text-centered title is-5 has-text-grey-lighter"></div>
-
         <div class="mt-5 columns is-centered">
-          <img src="./assets/images/Screenshot 2023-06-08 at 9.26.18 PM.png" />
+          <img src="./assets/images/Screenshot 2023-06-08 at 9.26.18 PM.png" alt="Angry Cat Picture" />
         </div>
+
+        <br><br>
+
         <div class="has-text-centered">
           <button id="search-form" class="button is-primary is-large is-rounded">Go!</button>
         </div>
+      </header>
+      <br>
 
-        <section class="section">
+      <article>
+
+        <section id="hideMe" class="section hidden">
           <div class="container">
             <h3 class="title has-text-centered is-size4"></h3>
             <div class="columns mt-5 is-8 is-variable is-centered"></div>
 
-            <div class="column is-4tablet is-3-descktop">
+            <div class="column is-mobile 5 is-tablet 4 is-desktop 3">
               <div class="card">
 
                 <div class="card-image has-text-centered px6">
@@ -44,22 +49,33 @@
                 </div>
 
                 <div class="card-content">
-                  <p class="title is-size">Recipe Name</p>
-                  <p id="recipeName"></p>
-                  <!-- for loop to show Ingredients/Measure -->
-                  <!-- bring in the meals.strMeal from api -->
+                  <h2 id="recipeTitle" class="title is-size-3 has-text-centered is-underlined">Recipe Name:</h2>
+                  <br>
+                  <p id="recipeName" class="subtitle is-size-4 has-text-centered has-text-danger is-italic has-text-weight-bold"></p>
+                  <br>
+                  <p class="is-size-5 has-text-weight-bold">Link to recipe source:</p>
+                  <h2 id="recipeUrl" class="is-size-6 has-text-info"></h2>
+                  <br>
+                  <p class="is-size-5 has-text-weight-bold">Watch a Youtube video!</p>
+                  <h2 id="recipeVideo" class="is-size-6 has-text-info"></h2>
+                  <br>
+                  <h2 id="ingredientsTitle" class="title is-size-3 has-text-centered is-underlined">Ingredients and
+                    Measurements</h2>
                   <p id="ingredientsMeasurements"></p>
-                  <!-- end for loop -->
-                  <!-- bring in the ingredients and measures (if applicable for each) from meals[ingredients], meals[measurements]-->
+                  <br>
+                  <h2 id="instructionsTitle" class="title is-size-3 has-text-centered is-underlined">Recipe Instructions
+                  </h2>
                   <p id="recipeInstructions"></p>
-                  <!-- bring in the instructions from meals.strInstructions-->
                 </div>
-                <footer class="card-footer">
-                  <a href="#save" class="card-footer-item">Save</a>
 
+                <footer class="card-footer">
+                  <a id="savedRecipe" href="#save" class="card-footer-item">Save This Recipe!</a>
+                  <a id="newRecipe" href="#new-recipe" class="card-footer-item">Get Me A New Recipe</a>
                 </footer>
               </div>
+
               <br><br><br>
+
               <div class="card">
 
                 <div class="card-image has-text-centered px6">
@@ -67,13 +83,14 @@
                 </div>
 
                 <div class="card-content">
-                  <p class="title is-size">Random Joke</p>
+                  <p class="title is-size has-text-centered">Random Joke</p>
                   <p id="setup"></p>
                   <p id="delivery"></p>
                 </div>
+
                 <footer class="card-footer">
-                  <a id="saveJoke" href="#save" class="card-footer-item">Save</a>
-                  <a id="newJoke" href="#new-joke" class="card-footer-item">New Joke</a>
+                  <a id="saveJoke" href="#save" class="card-footer-item">Make Favorite Joke</a>
+                  <a id="newJoke" href="#new-joke" class="card-footer-item">Get Me A New Joke</a>
                 </footer>
               </div>
             </div>
@@ -82,13 +99,29 @@
         </section>
 
         <div class="column has-text-centered">
-          <button class="mt-5 button is-info is-medium is-rounded">Show me my last recipe and joke</button>
+          <button id="btnbottom" class="mt-5 button is-info is-medium is-rounded">Show My Last Saved Recipe & Favorite
+            Joke</button>
         </div>
 
-      </header>
+        <div class="cardBottom">
+          <h1 id="savedRecipe2" class="title is-5 ml-3 is-size has-text-centered hidden">Saved Recipe</h1>
+          <p id="name" class="ml-3"></p>
+          <p id="ingredients" class="ml-3"></p>
+          <p id="instructions" class="ml-3"></p>
+        </div>
 
+        <div class="cardBottom">
+          <h1 id="savedJoke" class="title is-5 ml-3 is-size has-text-centered hidden">Favorite Joke</h1>
+          <p id="jokeContents" class="ml-3"></p>
+        </div>
 
-      <script src="./Assets/script.js"></script>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="./Assets/script.js"></script>
+
 </body>
 
 </html>
