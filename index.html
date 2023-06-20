@@ -23,7 +23,7 @@
         </h2>
 
         <div class="mt-5 columns is-centered">
-          <img src="./assets/images/Screenshot 2023-06-08 at 9.26.18 PM.png" alt="Angry Cat Picture"/>
+          <img src="./assets/images/Screenshot 2023-06-08 at 9.26.18 PM.png" alt="Angry Cat Picture" />
         </div>
 
         <br><br>
@@ -31,10 +31,11 @@
         <div class="has-text-centered">
           <button id="search-form" class="button is-primary is-large is-rounded">Go!</button>
         </div>
+      </header>
+      <br>
 
+      <article>
 
-        <br>
-        
         <section id="hideMe" class="section hidden">
           <div class="container">
             <h3 class="title has-text-centered is-size4"></h3>
@@ -48,28 +49,31 @@
                 </div>
 
                 <div class="card-content">
-                  <h2 id="recipeTitle" class="title is-size has-text-centered hidden">Recipe Name:</p>
-                  <p id="recipeName"></p>
+                  <h2 id="recipeTitle" class="title is-size-3 has-text-centered is-underlined">Recipe Name:</h2>
                   <br>
-                  <h2 id="recipeUrl">Here's the link to recipe source.</h2>
+                  <p id="recipeName" class="subtitle is-size-4 has-text-centered has-text-danger is-italic has-text-weight-bold"></p>
                   <br>
-                  <h2 id="recipeVideo">Watch a how to video!</h2>
+                  <h2 id="recipeUrl" class="is-size-6 has-text-info">Link to recipe source:</h2>
                   <br>
-                  <h2 id="ingredientsTitle" class="title is-size has-text-centered hidden">Ingredients and Measurements</h2>
+                  <h2 id="recipeVideo" class="is-size-6 has-text-info">Watch a Youtube video!</h2>
+                  <br>
+                  <h2 id="ingredientsTitle" class="title is-size-3 has-text-centered is-underlined">Ingredients and
+                    Measurements</h2>
                   <p id="ingredientsMeasurements"></p>
                   <br>
-                  <h2 id="instructionsTitle" class="title is-size has-text-centered hidden">Recipe Instructions</h2>
+                  <h2 id="instructionsTitle" class="title is-size-3 has-text-centered is-underlined">Recipe Instructions
+                  </h2>
                   <p id="recipeInstructions"></p>
                 </div>
-                
+
                 <footer class="card-footer">
                   <a id="savedRecipe" href="#save" class="card-footer-item">Save This Recipe!</a>
                   <a id="newRecipe" href="#new-recipe" class="card-footer-item">Get Me A New Recipe</a>
                 </footer>
               </div>
-              
+
               <br><br><br>
-              
+
               <div class="card">
 
                 <div class="card-image has-text-centered px6">
@@ -93,7 +97,8 @@
         </section>
 
         <div class="column has-text-centered">
-          <button id="btnbottom"class="mt-5 button is-info is-medium is-rounded">Show My Last Saved Recipe & Favorite Joke</button>
+          <button id="btnbottom" class="mt-5 button is-info is-medium is-rounded">Show My Last Saved Recipe & Favorite
+            Joke</button>
         </div>
 
         <div class="cardBottom">
@@ -108,10 +113,13 @@
           <p id="jokeContents" class="ml-3"></p>
         </div>
 
-      </header>
+      </article>
 
+    </section>
+  </main>
 
-      <script src="./Assets/script.js"></script>
+  <script src="./Assets/script.js"></script>
+
 </body>
 
 </html>
