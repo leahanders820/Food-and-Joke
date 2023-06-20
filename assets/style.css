@@ -19,3 +19,11 @@
    display: none;
    border-radius: 4px;
 }
+
+#recipeUrl {
+   font: bold;
+}
+
+#recipeVideo {
+   font: bold;
+}
