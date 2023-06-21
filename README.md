@@ -1,14 +1,11 @@
-...
 # Food-and-Joke
 <!-- Title -->
-...
 ## Authors
 Martin Farr
 Leah Anderson
 Ben Currier
 Bryan Stauning
 Henry Vang
-...
 ## Food-and-Joke is an application that allows the user to generate a random recipe with a random joke.
 <!-- Name of Project and what it does -->
 This site is meant to deliver a meal recipe and a joke on demand and provide local storage for saving favorite recipes and jokes and being able to recall them to the page.
@@ -18,18 +15,24 @@ This application will let users have access to a random recipe and a joke. The r
 a video link, and a website link. The joke will be random at the click of a button and both will have a save option.
 Additionally, display and hide functions for all cards or buttons has not been implemented, another future enhancement.
 Hope you like this site!
-...
 ## Link to Food-and-Joke
+https://leahanders820.github.io/Food-and-Joke/
 
-[Deployed Page](https://leahanders820.github.io/Food-and-Joke/)
-
-...
 ## Some Illustrations
 ![Webpage](./assets/images/projectFrontPage.png)
 ![Webpage](./assets/images/projectRecipeCard.png)
 ![Webpage](./assets/images/projectRandomJoke.png)
 ...
+
 ## User Story
 AS A hungry joke lover
 I WANT to read jokes and recipes everyday for eternity! 
 SO THAT I will have fresh ideas and food.
+
+
+
+
+
+
+
+
