@@ -18,12 +18,14 @@ Hope you like this site!
 ## Link to Food-and-Joke
 https://leahanders820.github.io/Food-and-Joke/
 
-## Some Illistrations
-![Webpage](./Assets/images/projectFrontPage.png)
-![Webpage](./Assets/images/projectRecipeCard.png)
-![Webpage](./Assets/images/projectRandomJoke.png)
+## Some Illustrations
+![Webpage](./assets/images/projectFrontPage.png)
+![Webpage](./assets/images/projectRecipeCard.png)
+![Webpage](./assets/images/projectRandomJoke.png)
+...
+
 ## User Story
-AS A hungery joke lover
+AS A hungry joke lover
 I WANT to read jokes and recipes everyday for eternity! 
 SO THAT I will have fresh ideas and food.
 
