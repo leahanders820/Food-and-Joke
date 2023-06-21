@@ -27,7 +27,7 @@ Hope you like this site!
 ## Some Illustrations
 ![Webpage](./assets/images/projectFrontPage.png)
 ![Webpage](./assets/images/projectRecipeCard.png)
-![Webpage](./assets/images/projectRecipeCard.png)
+![Webpage](./assets/images/projectRandomJoke.png)
 ...
 ## User Story
 AS A hungry joke lover
